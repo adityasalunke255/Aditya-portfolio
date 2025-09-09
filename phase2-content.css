@@ -1,0 +1,29 @@
+/* Phase 2 - Content depth (case studies, about timeline) */
+:root{ --violet:#8a2be2; --neon-blue:#1e90ff; --neon-cyan:#00f9ff; }
+
+/* Timeline */
+.timeline{ position:relative; margin: 2rem auto; padding-left: 1.5rem; max-width: 900px; }
+.timeline:before{ content:""; position:absolute; left:0.5rem; top:0; bottom:0; width:2px; background: linear-gradient(180deg, var(--neon-blue), var(--violet)); opacity:0.6; }
+.timeline-item{ position:relative; margin:1.25rem 0; padding-left:1rem; }
+.timeline-item .dot{ position:absolute; left:-0.1rem; top:0.2rem; width:12px; height:12px; border-radius:50%; background: var(--violet); box-shadow:0 0 8px var(--violet), 0 0 14px var(--neon-cyan, #00f9ff); }
+.timeline-item h3{ margin:0 0 .25rem; font-family:'Poppins',system-ui; font-weight:700; color:#fff; }
+.timeline-item p{ margin:.2rem 0 0; color:#c9d1d9; }
+
+/* Case study */
+.cs-hero{ padding: 3rem 0 1rem; text-align:center; }
+.cs-title{ font-size: clamp(1.6rem, 2.6vw, 2.4rem); font-family:'Poppins',system-ui; }
+.cs-meta{ display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; margin:.75rem 0 1.25rem; }
+.cs-badge{ background: rgba(138,43,226,.1); color:#e0d7ff; border:1px solid rgba(138,43,226,.35); padding:.35rem .6rem; border-radius:999px; font-size:.8rem; }
+
+.cs-grid{ display:grid; grid-template-columns: 1fr; gap:1rem; max-width:1000px; margin: 0 auto 1.5rem; }
+@media (min-width: 780px){ .cs-grid{ grid-template-columns: repeat(3,1fr);} }
+.figure-card{ aspect-ratio: 16/10; border-radius:14px; overflow:hidden; position:relative; background: radial-gradient(120% 100% at 20% 0%, rgba(138,43,226,.18), rgba(30,144,255,.12) 40%, rgba(0,0,0,.35) 100%); border:1px solid rgba(255,255,255,.08); box-shadow: 0 8px 24px rgba(0,0,0,.45), inset 0 0 16px rgba(0,249,255,.06); }
+.figure-card img{ width:100%; height:100%; object-fit:cover; display:block; opacity: .98; }
+.figure-card .ph{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#9bdcff; font-size:.9rem; letter-spacing:.2px; }
+
+.cs-section{ max-width: 900px; margin: 0 auto 1.25rem; }
+.cs-section h2{ font-size:1.2rem; margin:.75rem 0 .4rem; color:#e6f1ff; font-family:'Poppins',system-ui; }
+.cs-section p, .cs-section ul{ color:#c9d1d9; line-height:1.6; }
+.cs-section ul{ padding-left:1.2rem; }
+
+/* Reduced motion - nothing special here, visuals are static */

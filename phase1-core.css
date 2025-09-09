@@ -1,0 +1,36 @@
+/* Phase 1 - Core visuals & interactions */
+:root{
+  --neon-blue:#1e90ff;
+  --neon-cyan:#00f9ff;
+  --violet:#8a2be2;
+}
+/* Particles layer */
+#particles{
+  position:fixed; inset:0; z-index:-1; pointer-events:none;
+}
+/* Cursor trail canvas */
+#cursor-trail{
+  position:fixed; inset:0; pointer-events:none; z-index:10; display:none !important;
+}
+/* Neon burger glow */
+.burger.is-active span{
+  background: var(--neon-blue);
+  box-shadow:0 0 8px var(--neon-blue), 0 0 16px var(--neon-cyan);
+}
+.burger:active span{ transform:scale(0.96); }
+/* Button ripple */
+.btn, .btn.btn-ghost{
+  position:relative; overflow:hidden;
+}
+.ripple{
+  position:absolute; border-radius:999px; transform:translate(-50%,-50%);
+  background: radial-gradient(circle, rgba(0,249,255,0.35) 0%, rgba(30,144,255,0.25) 40%, rgba(0,0,0,0) 70%);
+  width:10px; height:10px; opacity:0.9; animation:ripple .6s ease-out forwards;
+}
+@keyframes ripple{ to{ width:320px; height:320px; opacity:0; } }
+/* GSAP initial states safeguard (only applied when JS adds .use-gsap) */
+.use-gsap .fade-up, .use-gsap .scale-in{ opacity:0; will-change:transform, opacity; }
+/* Reduced motion helpers */
+@media (prefers-reduced-motion: reduce){
+  .ripple{ display:none; }
+}
